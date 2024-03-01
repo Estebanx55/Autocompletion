@@ -28,20 +28,20 @@ $(document).ready(function () {
             $('#suggestions').hide();
         }
     });
-    // Ajouter un écouteur d'événements pour les clics sur les suggestions d'autocomplétion
+    
     $(document).on('click', '#suggestions div', function () {
         var elementName = $(this).text();
-        // Rediriger l'utilisateur vers la page de l'élément avec le nom de l'élément dans l'URL
+        
         window.location.href = "element.php?name=" + encodeURIComponent(elementName);
     });
     $(document).on('click', '#results div', function () {
         var eName = $(this).text();
-        // Rediriger l'utilisateur vers la page de l'élément avec le nom de l'élément dans l'URL
+        
         window.location.href = "element.php?name=" + encodeURIComponent(eName);
     });
 
     $('#search').keypress(function (event) {
-        if (event.which == 13) { // 13 is the code for Enter key
+        if (event.which == 13) { // 13 = enter 
             var query = $(this).val().trim();
             if (query !== '') {
                 window.location.href = "recherche.php?search=" + encodeURIComponent(query);

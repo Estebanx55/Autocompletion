@@ -12,7 +12,7 @@ if(isset($_POST['query'])) {
     
     if(mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
-            echo "<div> - ".$row['nom']."</div>";
+            echo "<div>".$row['nom']."</div>";
         }
     } else {
         echo "<div>Aucun résultat trouvé.</div>";
